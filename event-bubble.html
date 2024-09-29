@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubble</title>
+    <style>
+      * {
+        list-style: none;
+      }
+      li {
+        font-size: 40px;
+      }
+      h1 {
+        font-weight: bolder;
+        font-size: 60px;
+      }
+      #item_2 {
+        border: 2px solid steelblue;
+        padding: 5px;
+        cursor: pointer;
+      }
+      #ul_list {
+        border: 2px solid tomato;
+        padding: 10px;
+        cursor: pointer;
+      }
+      #div_container {
+        border: 2px solid green;
+        padding: 10px;
+        cursor: pointer;
+      }
+      #section_container {
+        border: 2px solid black;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="section_container">
+      <h1>Exploring Event bubble</h1>
+      <div id="div_container">
+        <h2>unorderd lists:div container</h2>
+        <ul id="ul_list">
+          <li id="item_1">item-1:ul lists</li>
+          <li id="item_2">item-2</li>
+          <li id="item_3">item-3</li>
+          <li id="item_4">item-4</li>
+          <li id="item_5">item-5</li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      document.getElementById("item_2").addEventListener("click", function (e) {
+        console.log("item-2 clicked");
+      });
+      document
+        .getElementById("ul_list")
+        .addEventListener("click", function (e) {
+          e.stopImmediatePropagation();
+          console.log("ul list clicked");
+        });
+      document
+        .getElementById("div_container")
+        .addEventListener("click", function () {
+          console.log("div container clicked");
+        });
+      document
+        .getElementById("section_container")
+        .addEventListener("click", function () {
+          console.log("section container clicked");
+        });
+      document.querySelector("*").addEventListener("click", function () {
+        console.log("globally clicked");
+      });
+    </script>
+  </body>
+</html>

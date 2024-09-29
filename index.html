@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DOM event</title>
+  </head>
+  <body>
+    <header>
+      <h1>Explore JS DOM event</h1>
+    </header>
+    <main>
+      <!-- option 1: directly set on the HTML elements  (Onclick) -->
+      <button onclick="document.body.style.backgroundColor='blue'">
+        Click me to make blue
+      </button>
+      <!-- option 2: add onclick function on the html element -->
+      <button onclick="makeGreen()">MouseWheel me to make green</button>
+      <!-- option 3(i): -->
+      <button id="make_red">Click me to make red</button>
+      <!-- option 3(ii): -->
+      <button id="make_purple">Click me to make purple</button>
+      <button id="alert_btn">Alert</button>
+      <!-- option4(i) addEventListener -->
+      <button id="make_pink">Make Pink</button>
+      <!-- option4(ii) addEventListener -->
+      <button id="make_goldenrod">Make GoldenRod</button>
+      <!-- option4(ii) addEventListener -->
+      <button id="make_steelblue">Make Steel Blue</button>
+    </main>
+    <script src="event.js"></script>
+    <script></script>
+  </body>
+</html>

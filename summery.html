@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Summary</title>
+  </head>
+  <body>
+    <h1>Final DOM EVENT HANDLER</h1>
+
+    <h4 id="input_field_text">Default Input Text</h4>
+    <input type="text" id="input_field" />
+    <button id="input_btn">Update</button>
+
+    <h2 id="new_text">Default text</h2>
+    <button onclick="handleClick()" id="text_change">
+      Handle Event By onclick function
+    </button>
+    <button id="event_listener">Handle Event By addEventListener</button>
+    <button id="enter_btn">Press Enter Button</button>
+  </body>
+  <script>
+    function handleClick() {
+      const setText = document.getElementById("new_text");
+      setText.innerText = "New Text Set By onclick function";
+    }
+
+    document.getElementById("input_btn").addEventListener("click", function () {
+      const inputField = document.getElementById("input_field");
+      const inputText = inputField.value;
+
+      const h4 = document.getElementById("input_field_text");
+      h4.innerText = inputText;
+      inputField.value = "";
+    });
+  </script>
+</html>
